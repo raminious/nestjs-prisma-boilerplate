@@ -23,10 +23,19 @@ This is a fair good boilerplate to start a new NestJS project with Prisma.
 
 ```
 git glone https://github.com/raminious/nestjs-boilerplate/
+```
 
+Update environment variables
+```
 mv .env.keep .env
+```
 
+Initialize database
+```
 npx prisma db push
+```
 
+Start Server
+```
 npm run start:dev
 ```
