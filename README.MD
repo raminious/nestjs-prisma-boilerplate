@@ -26,5 +26,7 @@ git glone https://github.com/raminious/nestjs-boilerplate/
 
 mv .env.keep .env
 
+npx prisma db push
+
 npm run start:dev
 ```
