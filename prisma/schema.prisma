@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_URL")
+}
+
+model User {
+  id                String          @default(dbgenerated("uuid_generate_v4()")) @id
+  name              String
+  email             String          @unique
+  password          String
+  gender            Gender?
+  roles             String[]
+  origin            UserOrigin      @default(Local)
+  emailVerified     Boolean         @default(false) @map("email_verified")
+  createdAt         DateTime        @default(now()) @map("created_at")
+  updatedAt         DateTime        @default(now()) @map("updated_at")
+  tokens            UserToken[]
+  posts             Post[]
+
+  @@map("users")
+}
+
+model UserToken {
+  id                String          @default(dbgenerated("uuid_generate_v4()")) @id
+  user              User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId            String
+  code              String
+  type              UserTokenType
+  createdAt         DateTime        @default(now()) @map("created_at")
+
+  @@map("users-tokens")
+}
+
+model Post {
+  id                String          @default(dbgenerated("uuid_generate_v4()")) @id
+  author            User            @relation(fields: [authorId], references: [id])
+  authorId          String
+  title             String
+  body              String
+  published         Boolean         @default(false)
+  createdAt         DateTime        @default(now()) @map("created_at")
+  updatedAt         DateTime        @default(now()) @map("updated_at")
+
+  @@map("posts")
+}
+
+enum UserOrigin {
+  Local
+  Google
+}
+
+enum Gender {
+  Male
+  Female
+  NonBinary
+}
+
+enum UserTokenType {
+  EmailVerify
+  PasswordReset
+}
