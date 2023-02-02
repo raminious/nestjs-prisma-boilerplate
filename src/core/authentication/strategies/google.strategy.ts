@@ -1,8 +1,8 @@
 import { PassportStrategy } from '@nestjs/passport'
 import { ConflictException, Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
-import { Strategy, VerifyCallback } from 'passport-google-oauth20'
-// import { UserEntity } from 'src/core/user/entity/user.entity'
+import { Strategy } from 'passport-google-oauth20'
+
 import { AuthService } from '../services/auth.service'
 import { UserEntity } from 'src/core/user/entity/user.entity'
 import { PrismaService } from 'src/core/database/services/prisma.service'
