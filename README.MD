@@ -39,3 +39,15 @@ Start Server
 ```
 npm run start:dev
 ```
+
+### Environment keys
+
+| Key                        | Sample value                                       |
+|----------------------------|----------------------------------------------------|
+| POSTGRES_URL               | postgresql://postgres:123456@localhost:5432/dbName |
+| JWT_SECRET                 | 2a1v4y/B?TXH+MbQeThWmYq3t1l9a#C&                   |
+| JWT_EXPIRESIN              | 30d                                                |
+| SECURITY_KEY               | C&F)J@AcQfTjWnLr4u1x!B%D*G-KaPdS                   |
+| GOOGLE_OAUTH_CLIENT_ID     | *****.apps.googleusercontent.com                   |
+| GOOGLE_OAUTH_CLIENT_SECRET | GOCDPZ-R1A1P5cEEljValVoIeYcboOWc311                |
+
