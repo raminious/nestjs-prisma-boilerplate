@@ -17,7 +17,7 @@ This is a fair good boilerplate to start a new NestJS project with Prisma.
 - Class Serializer Interceptor
 - Data Validations
 - Exceptions Management
-
+- Health Check (Prisma, Storage, Memory)
 
 ## How to use
 
