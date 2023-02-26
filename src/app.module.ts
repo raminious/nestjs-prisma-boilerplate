@@ -12,6 +12,7 @@ import { BodyTransformModule } from './core/body-transform/body-transform.module
 
 import { UserModelModule } from './models/user/user.module'
 import { PostModelModule } from './models/post/post.module'
+import { HealthModule } from './core/health/health.module'
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { PostModelModule } from './models/post/post.module'
     ResponseTimeModule,
     ConfigurationsModule,
     BodyTransformModule,
+    HealthModule,
   ],
   providers: [
     {
