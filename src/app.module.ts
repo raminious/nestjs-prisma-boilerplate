@@ -9,10 +9,11 @@ import { ResponseTimeModule } from './core/response-time/response-time.module'
 import { ConfigurationsModule } from './core/configurations/configurations.module'
 import { DatabaseModule } from './core/database/database.module'
 import { BodyTransformModule } from './core/body-transform/body-transform.module'
+import { HealthModule } from './core/health/health.module'
+import { CacheModule } from './core/cache/cache.module'
 
 import { UserModelModule } from './models/user/user.module'
 import { PostModelModule } from './models/post/post.module'
-import { HealthModule } from './core/health/health.module'
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { HealthModule } from './core/health/health.module'
     ConfigurationsModule,
     BodyTransformModule,
     HealthModule,
+    CacheModule,
   ],
   providers: [
     {

@@ -33,6 +33,7 @@
     "@nestjs/throttler": "^4.0.0",
     "@prisma/client": "^4.10.1",
     "bcrypt": "^5.1.0",
+    "cache-manager": "^5.1.7",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "compression": "^1.7.4",

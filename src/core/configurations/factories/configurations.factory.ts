@@ -19,5 +19,9 @@ export default function configurations(): Configurations {
         clientSecret: process.env.GOOGLE_OAUTH_CLIENT_SECRET,
       },
     },
+    cache: {
+      ttl: parseInt(process.env.CACHE_TTL, 10) ?? 60 * 1000,
+      max: parseInt(process.env.CACHE_MAX, 10) || 100,
+    },
   }
 }

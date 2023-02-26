@@ -6,6 +6,7 @@ import {
   MemoryHealthIndicator,
 } from '@nestjs/terminus'
 import { Public } from 'src/core/authentication/decorators/auth-public.decorator'
+import { DisableCache } from 'src/core/cache/decorators/disable-cache.decorator'
 
 import { PrismaHealthIndicator } from '../indicators/prisma.health'
 
@@ -24,6 +25,7 @@ export class HealthController {
   @Get()
   @HealthCheck()
   @Public()
+  @DisableCache()
   check() {
     return this.health.check([
       () => this.db.isHealthy('db'),

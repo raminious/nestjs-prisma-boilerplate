@@ -18,6 +18,7 @@ This is a fair good boilerplate to start a new NestJS project with Prisma.
 - Data Validations
 - Exceptions Management
 - Health Check (Prisma, Storage, Memory)
+- Customizable Caching
 
 ## How to use
 
@@ -50,4 +51,5 @@ npm run start:dev
 | SECURITY_KEY               | C&F)J@AcQfTjWnLr4u1x!B%D*G-KaPdS                   |
 | GOOGLE_OAUTH_CLIENT_ID     | *****.apps.googleusercontent.com                   |
 | GOOGLE_OAUTH_CLIENT_SECRET | GOCDPZ-R1A1P5cEEljValVoIeYcboOWc311                |
-
+| CACHE_TTL                  | 30000                                              |
+| CACHE_MAX                  | 100                                                |

@@ -16,4 +16,8 @@ export interface Configurations {
       clientSecret: string
     }
   }
+  cache: {
+    ttl: number
+    max: number
+  }
 }
