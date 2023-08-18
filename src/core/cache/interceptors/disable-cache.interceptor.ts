@@ -1,8 +1,6 @@
-import {
-  CacheInterceptor as NestCacheInterceptor,
-  ExecutionContext,
-} from '@nestjs/common'
+import { ExecutionContext } from '@nestjs/common'
 import { DISABLE_CACHE_KEY } from '../decorators/disable-cache.decorator'
+import { CacheInterceptor as NestCacheInterceptor } from '@nestjs/cache-manager'
 
 export class CacheInterceptor extends NestCacheInterceptor {
   protected isRequestCacheable(context: ExecutionContext): boolean {
