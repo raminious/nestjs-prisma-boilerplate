@@ -5,10 +5,12 @@ import { RateLimitGuard } from './guards/rate-limit.guard'
 
 @Module({
   imports: [
-    ThrottlerModule.forRoot({
-      ttl: 60,
-      limit: 30,
-    }),
+    ThrottlerModule.forRoot([
+      {
+        ttl: 60,
+        limit: 30,
+      },
+    ]),
   ],
   providers: [
     {
