@@ -1,0 +1,41 @@
+---
+version: '3'
+
+services:
+  postgres:
+    container_name: 'postgres-pikaso'
+    image: 'postgis/postgis:14-3.3-alpine'
+    environment:
+      POSTGRES_USER: 'pikaso'
+      POSTGRES_PASSWORD: 'changeme'
+      POSTGRES_DB: 'pikaso'
+      PGDATA: '/data/pikaso'
+    ports:
+      - '5432:5432'
+    restart: 'always'
+
+  server:
+    platform: linux/x86_64
+    container_name: 'pikaso-renderer'
+    image: pikaso
+    entrypoint: ''
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+    ports:
+      - '4000:4000'
+    expose:
+      - 4000
+    environment:
+      - POSTGRES_URL=postgres://pikaso:changeme@postgres:5432/pikaso?sslmode=disable
+      - CHROME_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
+      - NODE_ENV=development
+    command: npm run start:dev
+    volumes:
+      - /app/node_modules
+      - .:/app
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: 'always'
